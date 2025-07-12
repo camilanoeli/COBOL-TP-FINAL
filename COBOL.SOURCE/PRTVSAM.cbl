@@ -1,0 +1,62 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. PRTVSAM.
+       AUTHOR. ESTUDIANTE Z70681 (Camila Noeli Abuin).
+       DATE-WRITTEN. 12/07/2025.
+       DATE-COMPILED.
+
+       ENVIRONMENT DIVISION.
+       INPUT-OUTPUT SECTION.
+       FILE-CONTROL.
+           SELECT ARCHIVO-MAESTRO ASSIGN TO MAESTRO
+               ORGANIZATION IS INDEXED
+               ACCESS MODE IS SEQUENTIAL
+               RECORD KEY IS LIB-CODIGO
+               FILE STATUS IS WS-STATUS-MAESTRO.
+
+       DATA DIVISION.
+       FILE SECTION.
+       FD ARCHIVO-MAESTRO
+           RECORD CONTAINS 250 CHARACTERS
+           DATA RECORD IS REG-MAESTRO.
+       01 REG-MAESTRO.
+           COPY LIBRO.
+
+       WORKING-STORAGE SECTION.
+       01 WS-STATUS-MAESTRO PIC X(2) VALUE '00'.
+          88 WS-MAESTRO-OK VALUE '00'.
+       01 WS-FIN-ARCHIVO PIC X VALUE 'N'.
+          88 WS-FIN-ARCHIVO-SI VALUE 'S'.
+
+       PROCEDURE DIVISION.
+       MAIN-LOGIC.
+           OPEN INPUT ARCHIVO-MAESTRO
+           IF NOT WS-MAESTRO-OK
+               DISPLAY 'ERROR AL ABRIR ARCHIVO VSAM: ' WS-STATUS-MAESTRO
+               STOP RUN
+           END-IF
+
+           PERFORM UNTIL WS-FIN-ARCHIVO-SI
+               READ ARCHIVO-MAESTRO
+                   AT END
+                       MOVE 'S' TO WS-FIN-ARCHIVO
+                   NOT AT END
+                       PERFORM DISPLAY-REGISTRO
+               END-READ
+           END-PERFORM
+
+           CLOSE ARCHIVO-MAESTRO
+           DISPLAY 'FIN DE ARCHIVO VSAM'
+           STOP RUN.
+
+       DISPLAY-REGISTRO.
+           DISPLAY '----------------------------------------'
+           DISPLAY 'CODIGO       : ' LIB-CODIGO
+           DISPLAY 'TITULO       : ' LIB-TITULO
+           DISPLAY 'AUTOR        : ' LIB-AUTOR
+           DISPLAY 'EDITORIAL    : ' LIB-EDITORIAL
+           DISPLAY 'ANIO PUBLIC. : ' LIB-ANIO-PUBLICACION
+           DISPLAY 'CATEGORIA    : ' LIB-CATEGORIA
+           DISPLAY 'STOCK TOTAL  : ' LIB-STOCK-TOTAL
+           DISPLAY 'STOCK DISPON : ' LIB-STOCK-DISPONIBLE
+           DISPLAY 'UBICACION    : ' LIB-UBICACION
+           DISPLAY 'ESTADO       : ' LIB-ESTADO.

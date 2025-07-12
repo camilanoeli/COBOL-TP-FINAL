@@ -1,0 +1,5 @@
+L001      |Fund. de Programación                                       |Joyanes                                 |McGraw-Hill                   |2019|INFORMATICA         |005|A1-01     |
+L002      |Base de Datos                                               |Elmasri                                 |Pearson                       |2020|INFORMATICA         |003|A1-02     |
+L003      |Ingeniería de Software                                      |Pressman                                |McGraw-Hill                   |2021|INFORMATICA         |007|A1-03     |
+L004      |Redes de Computadoras                                       |Tanenbaum                               |Pearson                       |2018|INFORMATICA         |004|A2-01     |
+L005      |Sistemas Operativos                                         |Silberschatz                            |Wiley                         |2019|INFORMATICA         |006|A2-02     |

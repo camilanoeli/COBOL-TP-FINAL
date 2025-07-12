@@ -1,0 +1,13 @@
+1                                        SISTEMA DE BIBLIOTECA UNIVERSITARIA
+                                              UNIVERSIDAD DE LA MATANZA
+0FECHA: 20250712                      REPORTE DE CARGA DE LIBROS                                                      PAGINA   1
+ ------------------------------------------------------------------------------------------------------------------------------------
+0CODIGO      TITULO                          AUTOR                 EDITORIAL        ANIO  STOCK  UBICACION
+ ------------------------------------------------------------------------------------------------------------------------------------
+ L001        Fund. de Programación           Joyanes               McGraw-Hill      2019    5  A1-01
+ L002        Base de Datos                   Elmasri               Pearson          2020    3  A1-02
+ L003        Ingeniería de Software          Pressman              McGraw-Hill      2021    7  A1-03
+ L004        Redes de Computadoras           Tanenbaum             Pearson          2018    4  A2-01
+ L005        Sistemas Operativos             Silberschatz          Wiley            2019    6  A2-02     
+-TOTAL DE REGISTROS:           5
+ TOTAL DE ERRORES:           0
