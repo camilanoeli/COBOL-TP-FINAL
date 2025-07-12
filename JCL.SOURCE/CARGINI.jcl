@@ -2,6 +2,7 @@
 //******************************************************************
 //*  JCL: CARGINI                                                  *
 //*  DESCRIPCION: Carga inicial de libros                          *
+//*  AUTOR: Z70681 (CAMILA NOELI ABUIN)                            *
 //*  PASOS:                                                        *
 //*    1 - Borra y redefine el cluster VSAM                        *
 //*    2 - Compila y link-edita el programa COBOL (CARGINI)        *
@@ -64,3 +65,9 @@
 //GO.SYSPRINT   DD SYSOUT=*
 //GO.SYSOUT     DD SYSOUT=*
 //GO.SYSUDUMP   DD SYSOUT=*
+
+//GO.STEPLIB   DD DSN=&SYSUID..LOAD.LIBRARY,DISP=SHR
+//GO.ENTRADA   DD DSN=&SYSUID..DATA.LIBROS,DISP=SHR
+//GO.MAESTRO   DD DSN=&SYSUID..VSAM.LIBROS,DISP=SHR
+//GO.REPORTE   DD DSN=&SYSUID..REPORTES.GENERAL,DISP=SHR
+//GO.SYSOUT    DD SYSOUT=*

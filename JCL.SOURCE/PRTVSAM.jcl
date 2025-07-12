@@ -1,4 +1,10 @@
 //PRTVSAM JOB (ACCT),'PRINT VSAM',CLASS=A,MSGCLASS=H,NOTIFY=&SYSUID
+//******************************************************************
+//*  JCL: PRTVSAM                                                  *
+//*  DESCRIPCION: Lectura del archivo VSAM de libros               *
+//*  AUTOR: Z70681 (CAMILA NOELI ABUIN)                            *
+//******************************************************************
+//*
 //***************************************************************
 //* PASO 1 - COMPILACION Y LINKEDIT DEL PROGRAMA PRTVSAM        *
 //***************************************************************
